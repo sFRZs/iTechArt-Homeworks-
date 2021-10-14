@@ -1,0 +1,13 @@
+E:\iTechArt\HomeWork\2\Abstract _сlasses\bin\Debug\netcoreapp3.1\Abstract _сlasses.exe
+E:\iTechArt\HomeWork\2\Abstract _сlasses\bin\Debug\netcoreapp3.1\Abstract _сlasses.deps.json
+E:\iTechArt\HomeWork\2\Abstract _сlasses\bin\Debug\netcoreapp3.1\Abstract _сlasses.runtimeconfig.json
+E:\iTechArt\HomeWork\2\Abstract _сlasses\bin\Debug\netcoreapp3.1\Abstract _сlasses.runtimeconfig.dev.json
+E:\iTechArt\HomeWork\2\Abstract _сlasses\bin\Debug\netcoreapp3.1\Abstract _сlasses.dll
+E:\iTechArt\HomeWork\2\Abstract _сlasses\bin\Debug\netcoreapp3.1\Abstract _сlasses.pdb
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.csprojAssemblyReference.cache
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.AssemblyInfoInputs.cache
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.AssemblyInfo.cs
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.csproj.CoreCompileInputs.cache
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.dll
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.pdb
+E:\iTechArt\HomeWork\2\Abstract _сlasses\obj\Debug\netcoreapp3.1\Abstract _сlasses.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+E:\iTechArt\HomeWork\2\Task1\bin\Debug\netcoreapp3.1\Polymorphism.exe
+E:\iTechArt\HomeWork\2\Task1\bin\Debug\netcoreapp3.1\Polymorphism.deps.json
+E:\iTechArt\HomeWork\2\Task1\bin\Debug\netcoreapp3.1\Polymorphism.runtimeconfig.json
+E:\iTechArt\HomeWork\2\Task1\bin\Debug\netcoreapp3.1\Polymorphism.runtimeconfig.dev.json
+E:\iTechArt\HomeWork\2\Task1\bin\Debug\netcoreapp3.1\Polymorphism.dll
+E:\iTechArt\HomeWork\2\Task1\bin\Debug\netcoreapp3.1\Polymorphism.pdb
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.csprojAssemblyReference.cache
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.AssemblyInfoInputs.cache
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.AssemblyInfo.cs
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.csproj.CoreCompileInputs.cache
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.dll
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.pdb
+E:\iTechArt\HomeWork\2\Task1\obj\Debug\netcoreapp3.1\Polymorphism.genruntimeconfig.cache
