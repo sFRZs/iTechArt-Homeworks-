@@ -1,0 +1,45 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using Task1.User.Classes;
+using Task1.User.Classes.Employee;
+
+enum Users
+{
+    Candidate,
+    Employee
+}
+
+namespace Task1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rnd = new Random();
+            int maxValueOfUsers = rnd.Next(30);
+
+            var employees = new List<Employee>();
+            var candidates = new List<Candidate>();
+            var userFactory = new UserFactory();
+            
+            for (int i = 0; i < maxValueOfUsers; i++)
+            {
+               userFactory.GenerateUser(Convert.ToString((Users)rnd.Next(2)), employees, candidates);
+            }
+            
+            foreach (var user in employees)
+            {
+                user.Display();
+                Console.WriteLine();
+            }
+            
+            foreach (var user in candidates)
+            {
+                user.Display();
+                Console.WriteLine();
+            }
+           
+        }
+    }
+}
