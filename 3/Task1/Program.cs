@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using Task1.ReportGenerator.Classes;
 using Task1.User.Classes;
 using Task1.User.Classes.Employee;
-
-enum Users
-{
-    Candidate,
-    Employee
-}
 
 namespace Task1
 {
@@ -17,7 +10,9 @@ namespace Task1
     {
         static void Main(string[] args)
         {
-            Random rnd = new Random();
+            string[] users = {"Employee",  "Candidate"};
+
+        Random rnd = new Random();
             int maxValueOfUsers = rnd.Next(30);
 
             var employees = new List<Employee>();
@@ -26,7 +21,7 @@ namespace Task1
 
             for (int i = 0; i < maxValueOfUsers; i++)
             {
-                userFactory.GenerateUser(Convert.ToString((Users) rnd.Next(2)), employees, candidates);
+                userFactory.GenerateUser(users[rnd.Next(2)], employees, candidates);
             }
 
             foreach (var user in employees)
