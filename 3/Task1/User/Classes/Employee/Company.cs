@@ -1,6 +1,6 @@
 ﻿namespace Task1.User.Classes.Employee
 {
-    public class Company
+      public class Company
     {
         public string Name { get; set; }
         public string Country { get; set; }

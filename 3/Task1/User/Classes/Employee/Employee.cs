@@ -25,8 +25,7 @@ namespace Task1.User.Classes.Employee
 
         public override void Display()
         {
-            Console.WriteLine(
-                $"Hello, I am {FullName}, {JobTitle} in \"{company.Name}\" ({company.Country}, {company.City}, {company.Address}) and my salary ${JobSalary}.");
+            Console.WriteLine($"Hello, I am {FullName}, {JobTitle} in \"{company.Name}\" ({company.Country}, {company.City}, {company.Address}) and my salary ${JobSalary}.");
         }
     }
 }

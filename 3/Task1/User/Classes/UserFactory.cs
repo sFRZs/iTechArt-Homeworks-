@@ -6,10 +6,6 @@ namespace Task1.User.Classes
 {
     public class UserFactory
     {
-        public UserFactory()
-        {
-        }
-
         public void GenerateUser(string user, List<Employee.Employee> employees, List<Candidate> candidates)
         {
             if (user == "Employee")
