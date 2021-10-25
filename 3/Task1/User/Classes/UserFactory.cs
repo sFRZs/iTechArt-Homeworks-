@@ -21,6 +21,7 @@ namespace Task1.User.Classes
                 CreateUser<Candidate>(candidates);
             }
         }
+
         private void CreateUser<T>(List<T> users) where T : User
         {
             var faker = new Faker<T>()

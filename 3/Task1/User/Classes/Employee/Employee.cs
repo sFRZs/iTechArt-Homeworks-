@@ -5,7 +5,7 @@ namespace Task1.User.Classes.Employee
 {
     public class Employee : User
     {
-        private Company _company;
+        public Company company;
 
         public Employee()
         {
@@ -20,13 +20,13 @@ namespace Task1.User.Classes.Employee
                 .RuleFor(c => c.City, f => f.Address.City())
                 .RuleFor(c => c.Address, f => f.Address.StreetAddress());
 
-            _company = faker.Generate();
+            company = faker.Generate();
         }
 
         public override void Display()
         {
             Console.WriteLine(
-                $"Hello, I am {FullName}, {JobTitle} in \"{_company.Name}\" ({_company.Country}, {_company.City}, {_company.Address}) and my salary ${JobSalary}.");
+                $"Hello, I am {FullName}, {JobTitle} in \"{company.Name}\" ({company.Country}, {company.City}, {company.Address}) and my salary ${JobSalary}.");
         }
     }
 }
