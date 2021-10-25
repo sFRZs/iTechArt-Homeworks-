@@ -6,7 +6,7 @@ namespace Task1.User.Classes
     public class User : IDisplayable
     {
         public Guid Id { get; set; }
-        internal string FirstName { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public string JobTitle { get; set; }
         public string JobDescription { get; set; }
