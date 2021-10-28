@@ -13,9 +13,12 @@ namespace Task1.User.Classes
                 CreateUser<Employee.Employee>(employees);
             }
 
-            if (user == "Candidate")
+            else
             {
-                CreateUser<Candidate>(candidates);
+                if (user == "Candidate")
+                {
+                    CreateUser<Candidate>(candidates);
+                }
             }
         }
 
