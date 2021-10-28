@@ -12,8 +12,11 @@ namespace Task1.User.Classes
             {
                 CreateUser<Employee.Employee>(employees);
             }
-            
-            CreateUser<Candidate>(candidates);
+
+            if (user == "Candidate")
+            {
+                CreateUser<Candidate>(candidates);
+            }
         }
 
         private void CreateUser<T>(List<T> users) where T : User

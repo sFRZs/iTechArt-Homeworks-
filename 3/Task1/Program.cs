@@ -4,6 +4,12 @@ using Task1.ReportGenerator.Classes;
 using Task1.User.Classes;
 using Task1.User.Classes.Employee;
 
+// enum  Users
+// {
+//     Candidate,
+//     Employee
+// }
+
 namespace Task1
 {
     class Program
@@ -21,7 +27,7 @@ namespace Task1
 
             for (int i = 0; i < maxValueOfUsers; i++)
             {
-                userFactory.GenerateUser(users[rnd.Next(2)], employees, candidates);
+                userFactory.GenerateUser(/*Convert.ToString((Users)*/ users[rnd.Next(2)]/*)*/, employees, candidates);
             }
 
             foreach (var user in employees)
