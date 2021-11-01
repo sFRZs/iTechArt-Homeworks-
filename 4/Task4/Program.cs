@@ -46,7 +46,7 @@ namespace Task4
             Console.Write("Int list: ");
             foreach (var i in intList)
             {
-                Console.Write($"{i}. ");
+                Console.Write($"{i} ");
             }
 
             Console.WriteLine();

@@ -12,36 +12,41 @@ namespace Task4.Sorting.Classes
 
         private void PancakeSort<T>(List<T> list) where T : IComparable<T>
         {
-            var i = 1;
-            var j = 2;
-
-            while (i < list.Count)
+            for (int i = list.Count - 1; i >= 0; i--)
             {
-                string previusStr = list[i - 1] as string;
-                string str = list[i] as string;
-                if (previusStr != null && previusStr.Length < str.Length)
+                var indexOfMax = IndexOfMaxElement(list, i);
+                if (indexOfMax != i)
                 {
-                    i = j;
-                    j++;
-                }
-                else
-                {
-                    Swap(list, i - 1, i);
-                    i--;
-                    if (i == 0)
-                    {
-                        i = j;
-                        j++;
-                    }
+                    Flip(list, indexOfMax);
+                    Flip(list, i);
                 }
             }
         }
 
-        private void Swap<T>(List<T> list, int i, int j)
+        private int IndexOfMaxElement<T>(List<T> list, int end)
         {
-            T tmp = list[i];
-            list[i] = list[j];
-            list[j] = tmp;
+            var result = 0;
+            for (int i = 1; i <= end; i++)
+            {
+                string previusStr = list[result] as string;
+                string str = list[i] as string;
+                if (str != null && previusStr != null && previusStr.Length < str.Length)
+                {
+                    result = i;
+                }
+            }
+
+            return result;
+        }
+
+        private void Flip<T>(List<T> list, int endElement)
+        {
+            for (int i = 0; i < endElement; i++, endElement--)
+            {
+                T tmp = list[i];
+                list[i] = list[endElement];
+                list[endElement] = tmp;
+            }
         }
     }
 }
