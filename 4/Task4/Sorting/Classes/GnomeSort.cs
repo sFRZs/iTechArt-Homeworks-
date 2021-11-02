@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using Task4.Sorting.Interfaces;
 
 namespace Task4.Sorting.Classes
 {
-    public class NumbersSort<T> : ISorted
+    public class GnomeSort<T> : ISorted<T>
     {
-        public void Sort<T>(List<T> list) where T : IComparable<T>
-        {
-            GnomeSort(list);
-        }
-
-        private void GnomeSort<T>(List<T> list) where T : IComparable<T>
+        public void Sort(List<T> list, IComparer<T> comparer)
         {
             var i = 1;
             var j = 2;
 
             while (i < list.Count)
             {
-                if (list[i - 1].CompareTo(list[i]) > 0)
+                if (comparer.Compare(list[i - 1], list[i]) > 0)
                 {
                     i = j;
                     j++;
                 }
+
                 else
                 {
                     Swap(list, i - 1, i);
@@ -35,7 +31,7 @@ namespace Task4.Sorting.Classes
             }
         }
 
-        private void Swap<T>(List<T> list, int i, int j)
+        private void Swap(List<T> list, int i, int j)
         {
             T tmp = list[i];
             list[i] = list[j];
