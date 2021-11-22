@@ -4,6 +4,7 @@ using System.Reflection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Task1.BaseClasses;
+using System.Configuration;
 using JsonException = Newtonsoft.Json.JsonException;
 
 namespace Task1
@@ -13,8 +14,8 @@ namespace Task1
         static void Main(string[] args)
         {
             ILogger<Program> logger = new MyLogger<Program>().Logger;
+            var fileName = ConfigurationManager.AppSettings.Get("inputFile");
 
-            var fileName = "info.json";
             try
             {
                 var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -38,7 +39,7 @@ namespace Task1
             {
                 logger.LogError(e.Message);
                 throw;
-            } 
+            }
             catch (NullReferenceException e)
             {
                 logger.LogError(e.Message);
