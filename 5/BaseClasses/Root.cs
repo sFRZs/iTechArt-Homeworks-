@@ -64,7 +64,7 @@ namespace Task1.BaseClasses
                 }
                 else if (count > shopsWithPhone.Count)
                 {
-                    throw new PhoneNotAvailableException("«This mobile phone is out of stock");
+                    throw new PhoneNotAvailableException("This mobile phone is out of stock.");
                 }
             }
 
@@ -72,13 +72,13 @@ namespace Task1.BaseClasses
             {
                 logger.LogError(e.Message);
 
-                PhoneSearch("Please, enter a different phone model: ");
+                PhoneSearch("Please, enter a another phone model: ");
             }
 
             catch (PhoneNotAvailableException e)
             {
                 logger.LogError(e.Message);
-                PhoneSearch("Please, enter a other model: ");
+                PhoneSearch("Please, enter a another phone model: ");
             }
         }
 
@@ -116,7 +116,7 @@ namespace Task1.BaseClasses
             catch (ShopNotFoundException e)
             {
                 logger.LogError(e.Message);
-                ShopSearch("Please, enter a other shop: ", shops);
+                ShopSearch("Please, enter a another shop: ", shops);
             }
         }
     }
