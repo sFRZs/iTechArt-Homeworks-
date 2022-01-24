@@ -58,8 +58,11 @@ namespace Test1
 
             Thread.Sleep(2000);
             
-            IWebElement element1 = _driver.FindElement(By.XPath("//div[@class='calc-result']/div/span[contains(text(), '53')]"));
-            IWebElement element2 = _driver.FindElement(By.XPath("//div[@class='calc-result']/div/span[contains(text(), '7')]"));
+            IWebElement element1 = _driver.FindElement(By.XPath("//div[@class='calc-result']/div[1]/span"));
+            Assert.AreEqual("53", element1.GetAttribute("innerText"));
+            
+            IWebElement element2 = _driver.FindElement(By.XPath("//div[@class='calc-result']/div[2]/span"));
+            Assert.AreEqual("7", element2.GetAttribute("innerText"));
         }
     }
 }

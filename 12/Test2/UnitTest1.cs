@@ -48,7 +48,8 @@ namespace Test2
 
             Thread.Sleep(2000);
             
-            IWebElement result = _driver.FindElement(By.XPath("//td[contains(text(), '3028 ккал/день')]"));
+            IWebElement result = _driver.FindElement(By.XPath("//div[@class='block_content']/table/tbody/tr[2]/td"));
+            Assert.AreEqual("3028 ккал/день", result.GetAttribute("innerText"));
         }
     }
 }
