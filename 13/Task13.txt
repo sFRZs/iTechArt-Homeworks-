@@ -1,0 +1,13 @@
+1
+a) span[id*="123"]
+b) .arrow
+c) #123
+d) h1>span
+e) span[value^='12']
+
+2
+a) (//*[contains(text(),'Test')])[2]
+b) //*[contains(text(),'Test')][@ids]
+c) //*[contains(text(),'Title 2')]
+d) //h1/span[contains(text(),'Title 3')]
+e) (//div[contains(.//span, 'Title 2')]/descendant::span[@class="arrow"])[2]
