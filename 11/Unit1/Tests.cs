@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Numerics;
+using System.Reflection;
 using NUnit.Framework;
 
 namespace Task11
@@ -108,11 +110,15 @@ namespace Task11
 
         // FieAssert.
 
-        [Test]
-        public void TwoFilesWithTheSameContentsAreEqual()
+        [TestCase("file1.txt", "file1-copy.txt")]
+        public void TwoFilesWithTheSameContentsAreEqual(string fileName1, string fileName2)
         {
-            FileInfo file1 = new FileInfo(@"E:\file1.txt");
-            FileInfo file1copy = new FileInfo(@"E:\file1 — copy.txt");
+            var basePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var path1 = $"{basePath}{Path.DirectorySeparatorChar}{fileName1}";
+            var path2 = $"{basePath}{Path.DirectorySeparatorChar}{fileName2}";
+            
+            FileInfo file1 = new FileInfo(path1);
+            FileInfo file1copy = new FileInfo(path2);
 
             FileAssert.AreEqual(file1, file1copy);
         }
@@ -122,10 +128,26 @@ namespace Task11
         [Test]
         public void TwoFolderAreEquals()
         {
-            DirectoryInfo dir1 = new DirectoryInfo(@"E:\iTechArt");
-            DirectoryInfo dir2 = new DirectoryInfo(@"E:\iTechArt");
+            // DirectoryInfo dir1 = new DirectoryInfo(@"E:\iTechArt");
+            // DirectoryInfo dir2 = new DirectoryInfo(@"E:\iTechArt");
+            DirectoryInfo dir1 = new DirectoryInfo(Directory.GetCurrentDirectory());
+            DirectoryInfo dir2 = new DirectoryInfo(Directory.GetCurrentDirectory());
 
             DirectoryAssert.AreEqual(dir1, dir2);
+        }
+        
+        // Multiple Assert.
+
+        [TestCase(7.5, 1.1, 2.0, 8.3)]
+        public void SumTwoComplexNumbersTest(double realPart1, double imaginaryPart1, double realPart2, double imaginaryPart2)
+        {
+            Complex result = _logic.SumTwoComplexNumbers(new Complex(realPart1, imaginaryPart1), new Complex(realPart2, imaginaryPart2));
+            
+            Assert.Multiple(() =>
+            {
+                Assert.AreEqual(9.5, result.Real, "Real part");
+                Assert.AreEqual(9.4, result.Imaginary, "Imaginary part");
+            });
         }
     }
 }

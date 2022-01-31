@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Numerics;
 
 
 namespace Task11
@@ -8,12 +8,13 @@ namespace Task11
     {
         public bool IsNumberLessThen10(int number)
         {
-            if (number >= 10)
-            {
-                return false;
-            }
-
-            return true;
+            // if (number >= 10)
+            // {
+            //     return false;
+            // }
+            //
+            // return true;
+            return number < 10;
         }
 
         public double GetHipotenuseOfRightTriangle(int firstSide, int secondSide)
@@ -28,20 +29,7 @@ namespace Task11
             return new string(character, length);
         }
 
-        // public List<int> GenerateSomeList(int countElements, int minValue, int maxValue)
-        // {
-        //     var list = new List<int>();
-        //     var rnd = new Random();
-        //
-        //     for (int i = 0; i < countElements; i++)
-        //     {
-        //         list.Add(rnd.Next(minValue, maxValue + 1));
-        //     }
-        //
-        //     return list;
-        // }
-
-        public void GenerateArgumentException()
+      public void GenerateArgumentException()
         {
             throw new ArgumentException();
         }
@@ -55,6 +43,11 @@ namespace Task11
             }
 
             return outArray;
+        }
+
+        public Complex SumTwoComplexNumbers(Complex number1, Complex number2)
+        {
+            return new Complex(number1.Real + number2.Real, number1.Imaginary + number2.Imaginary);
         }
     }
 }
