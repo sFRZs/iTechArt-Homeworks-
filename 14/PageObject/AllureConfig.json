@@ -1,0 +1,9 @@
+﻿{
+  "allure": {
+    "directory": "allure-results",
+    "links": [
+      "{link}",
+      "https://www.saucedemo.com"
+    ]
+  }
+}
