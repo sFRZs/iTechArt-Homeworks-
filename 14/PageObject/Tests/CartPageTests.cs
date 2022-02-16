@@ -2,7 +2,7 @@
 using NUnit.Allure.Core;
 using NUnit.Framework;
 using PageObject.BaseEntities;
-using PageObject.Steps;
+
 
 namespace PageObject.Tests
 {
@@ -15,13 +15,10 @@ namespace PageObject.Tests
         [AllureTag("StandardUser")]
         public void RemoveItemFromCartTest()
         {
-            AddItemToCartStep addItem = new AddItemToCartStep(Driver);
-            addItem.AddItemsToCart(2);
+            AddItemStep.AddItemsToCart(2);
+            RemoveStep.RemoveItems(1);
 
-            RemoveItemsFromCartStep removeStep = new RemoveItemsFromCartStep(Driver);
-            removeStep.RemoveItems(1);
-
-            Assert.AreEqual(1, removeStep.CartPage.ItemsList.Count);
+            Assert.AreEqual(1, RemoveStep.CartPage.ItemsList.Count);
         }
     }
 }

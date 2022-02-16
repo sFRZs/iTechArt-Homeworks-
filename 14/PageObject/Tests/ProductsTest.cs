@@ -6,7 +6,6 @@ using NUnit.Framework;
 using OpenQA.Selenium;
 using PageObject.BaseEntities;
 using PageObject.Services;
-using PageObject.Steps;
 
 namespace PageObject.Tests
 {
@@ -20,21 +19,17 @@ namespace PageObject.Tests
         [AllureTag("StandardUser")]
         public void AddItemToCartTest(int numberOfProducts)
         {
-            var addItemStep = new AddItemToCartStep(Driver);
-            addItemStep.AddItemsToCart(numberOfProducts);
+            AddItemStep.AddItemsToCart(numberOfProducts);
 
-            Assert.AreEqual(numberOfProducts, addItemStep.ProductsPage.GetCartItemsCount());
+            Assert.AreEqual(numberOfProducts, AddItemStep.ProductsPage.GetCartItemsCount());
         }
 
         [Test]
         [AllureTag("StandardUser")]
         public void PurchaseOfTwoProductsTest()
         {
-            var addItemStep = new AddItemToCartStep(Driver);
-            addItemStep.AddItemsToCart(2);
-
-            var orderStep = new ConfirmOrderStep(Driver);
-            orderStep.Confirm();
+            AddItemStep.AddItemsToCart(2);
+            OrderStep.Confirm();
 
             var completeTitle = Driver.FindElement(By.ClassName("title"));
             Assert.AreEqual("Checkout: Complete!", completeTitle.GetAttribute("textContent"));
@@ -44,13 +39,10 @@ namespace PageObject.Tests
         [AllureTag("StandardUser")]
         public void SortByPriceLowToHighTest()
         {
-            var loginStep = new LoginStep(Driver);
-            loginStep.Login(UsersConfigurator.StandardUserName, UsersConfigurator.Password);
+            LoginStep.Login(UsersConfigurator.StandardUserName, UsersConfigurator.Password);
+            SortStep.SortByPriceLowToHigh();
 
-            var sortStep = new SortItemsStep(Driver);
-            sortStep.SortByPriceLowToHigh();
-
-            Assert.IsTrue(IsSortedByPrice(sortStep.ProductsPage.InventoryItemsList));
+            Assert.IsTrue(IsSortedByPrice(SortStep.ProductsPage.InventoryItemsList));
         }
 
         private bool IsSortedByPrice(List<IWebElement> items)
