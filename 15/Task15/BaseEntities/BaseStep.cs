@@ -5,7 +5,7 @@ namespace Task1.BaseEntities
 {
     public class BaseStep
     {
-        [ThreadStatic] protected static IWebDriver Driver;
+        protected IWebDriver Driver;
 
         public BaseStep(IWebDriver driver)
         {

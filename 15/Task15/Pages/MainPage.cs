@@ -5,23 +5,24 @@ namespace Task1.Pages
 {
     public class MainPage : BasePage
     {
-        private static string END_POINT = "";
+        private readonly By _fastSearchBy = By.ClassName("fast-search__input");
+        private readonly By _newsAndCatalogLayerBy = By.ClassName("b-main-page-catalog-layer");
 
-        private static readonly By FastSearchBy = By.ClassName("fast-search__input");
-        
         public MainPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
         }
-        
+
         public MainPage(IWebDriver driver) : base(driver, false)
         {
         }
 
-        protected override void OpenPage()
+
+        public override bool IsPageOpened()
         {
-            Driver.Navigate().GoToUrl(BaseTest.BaseUrl + END_POINT);
+            return NewsAndCatalogLayer.Displayed;
         }
 
-        public IWebElement FastSearch => WaitServices.GetVisibleElement(FastSearchBy);
+        public IWebElement FastSearch => WaitService.GetVisibleElement(_fastSearchBy);
+        public IWebElement NewsAndCatalogLayer => WaitService.GetVisibleElement(_newsAndCatalogLayerBy);
     }
 }

@@ -11,7 +11,7 @@ namespace Task1.BaseEntities
         public static readonly string BaseUrl = Configurator.BaseUrl;
         protected WaitServices WaitServices;
 
-        [ThreadStatic] protected static IWebDriver Driver;
+        protected IWebDriver Driver;
 
         [SetUp]
         public void Setup()

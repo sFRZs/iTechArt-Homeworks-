@@ -6,25 +6,25 @@ namespace PageObject.Pages.Checkout
 {
     public class CheckoutSecondPage : BasePage
     {
-        private static string END_POINT = "checkout-step-two.html";
+        private string END_POINT = "checkout-step-two.html";
 
         // Описание элементов
 
-        private static readonly By CartItemsListBy = By.ClassName("cart_item");
+        private readonly By _cartItemsListBy = By.ClassName("cart_item");
 
-        private static readonly By CancelButtonBy = By.Id("cancel");
+        private readonly By _cancelButtonBy = By.Id("cancel");
 
-        private static readonly By FinishButtonBy = By.Id("finish");
+        private readonly By _finishButtonBy = By.Id("finish");
 
-        private static readonly By ShoppingCartButtonBy = By.Id("shopping_cart_container");
+        private readonly By _shoppingCartButtonBy = By.Id("shopping_cart_container");
 
-        private static readonly By MenuButtonBy = By.Id("react-burger-menu-btn");
+        private readonly By _menuButtonBy = By.Id("react-burger-menu-btn");
 
-        private static readonly By TwitterButtonBy = By.LinkText("Twitter");
+        private readonly By _twitterButtonBy = By.LinkText("Twitter");
 
-        private static readonly By FacebookButtonBy = By.LinkText("Facebook");
+        private readonly By _facebookButtonBy = By.LinkText("Facebook");
 
-        private static readonly By LinkedInButtonBy = By.LinkText("LinkedIn");
+        private readonly By _linkedInButtonBy = By.LinkText("LinkedIn");
 
         // Инициализация класса
 
@@ -56,13 +56,13 @@ namespace PageObject.Pages.Checkout
 
         // Методы
 
-        public IWebElement CartItemsList => Driver.FindElement(CartItemsListBy);
-        public IWebElement CancelButton => Driver.FindElement(CancelButtonBy);
-        public IWebElement FinishButton => Driver.FindElement(FinishButtonBy);
-        public IWebElement ShoppingCartButton => Driver.FindElement(ShoppingCartButtonBy);
-        public IWebElement MenuButton => Driver.FindElement(MenuButtonBy);
-        public IWebElement TwitterButton => Driver.FindElement(TwitterButtonBy);
-        public IWebElement FacebookButton => Driver.FindElement(FacebookButtonBy);
-        public IWebElement LinkedInButton => Driver.FindElement(LinkedInButtonBy);
+        public IWebElement CartItemsList => Driver.FindElement(_cartItemsListBy);
+        public IWebElement CancelButton => Driver.FindElement(_cancelButtonBy);
+        public IWebElement FinishButton => Driver.FindElement(_finishButtonBy);
+        public IWebElement ShoppingCartButton => Driver.FindElement(_shoppingCartButtonBy);
+        public IWebElement MenuButton => Driver.FindElement(_menuButtonBy);
+        public IWebElement TwitterButton => Driver.FindElement(_twitterButtonBy);
+        public IWebElement FacebookButton => Driver.FindElement(_facebookButtonBy);
+        public IWebElement LinkedInButton => Driver.FindElement(_linkedInButtonBy);
     }
 }

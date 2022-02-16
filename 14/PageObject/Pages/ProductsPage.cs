@@ -8,23 +8,23 @@ namespace PageObject.Pages
 {
     public class ProductsPage : BasePage
     {
-        private static string END_POINT = "inventory.html";
+        private string END_POINT = "inventory.html";
 
         // Описание элементов
 
-        private static readonly By ProductSortSelectBy = By.ClassName("product_sort_container");
+        private readonly By _productSortSelectBy = By.ClassName("product_sort_container");
 
-        private static readonly By InventoryItemsBy = By.ClassName("inventory_item");
+        private readonly By _inventoryItemsBy = By.ClassName("inventory_item");
 
-        private static readonly By ShoppingCartButtonBy = By.Id("shopping_cart_container");
+        private readonly By _shoppingCartButtonBy = By.Id("shopping_cart_container");
 
-        private static readonly By MenuButtonBy = By.Id("react-burger-menu-btn");
+        private readonly By _menuButtonBy = By.Id("react-burger-menu-btn");
 
-        private static readonly By TwitterButtonBy = By.LinkText("Twitter");
+        private readonly By _twitterButtonBy = By.LinkText("Twitter");
 
-        private static readonly By FacebookButtonBy = By.LinkText("Facebook");
+        private readonly By _facebookButtonBy = By.LinkText("Facebook");
 
-        private static readonly By LinkedInButtonBy = By.LinkText("LinkedIn");
+        private readonly By _linkedInButtonBy = By.LinkText("LinkedIn");
 
 
         // Инициализация класса
@@ -56,17 +56,17 @@ namespace PageObject.Pages
         }
 
         // Методы
-        private IWebElement ProductSortElement => Driver.FindElement(ProductSortSelectBy);
+        private IWebElement ProductSortElement => Driver.FindElement(_productSortSelectBy);
         public SelectElement ProductSortSelect => new SelectElement(ProductSortElement);
 
         public List<IWebElement> InventoryItemsList =>
-            new List<IWebElement>(Driver.FindElements(InventoryItemsBy));
+            new List<IWebElement>(Driver.FindElements(_inventoryItemsBy));
 
-        public IWebElement ShoppingCartButton => Driver.FindElement(ShoppingCartButtonBy);
-        public IWebElement MenuButton => Driver.FindElement(MenuButtonBy);
-        public IWebElement TwitterButton => Driver.FindElement(TwitterButtonBy);
-        public IWebElement FacebookButton => Driver.FindElement(FacebookButtonBy);
-        public IWebElement LinkedInButton => Driver.FindElement(LinkedInButtonBy);
+        public IWebElement ShoppingCartButton => Driver.FindElement(_shoppingCartButtonBy);
+        public IWebElement MenuButton => Driver.FindElement(_menuButtonBy);
+        public IWebElement TwitterButton => Driver.FindElement(_twitterButtonBy);
+        public IWebElement FacebookButton => Driver.FindElement(_facebookButtonBy);
+        public IWebElement LinkedInButton => Driver.FindElement(_linkedInButtonBy);
 
         public int GetCartItemsCount()
         {

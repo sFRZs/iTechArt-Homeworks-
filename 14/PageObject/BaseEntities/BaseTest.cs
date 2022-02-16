@@ -1,5 +1,4 @@
-﻿using System;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using PageObject.Services;
 
@@ -9,7 +8,7 @@ namespace PageObject.BaseEntities
     {
         public static readonly string BaseUrl = Configurator.BaseUrl;
 
-        [ThreadStatic] protected static IWebDriver Driver;
+        protected IWebDriver Driver;
 
         [SetUp]
         public void Setup()

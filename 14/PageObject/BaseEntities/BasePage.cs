@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
@@ -7,8 +6,8 @@ namespace PageObject.BaseEntities
 {
     public abstract class BasePage
     {
-        [ThreadStatic] protected static IWebDriver Driver;
-        private static int WAIT_FOR_PAGE_LOADING_TIME = 10;
+        protected IWebDriver Driver;
+        private int WAIT_FOR_PAGE_LOADING_TIME = 10;
 
         public BasePage(IWebDriver driver, bool openPageByUrl)
         {

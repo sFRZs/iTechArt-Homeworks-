@@ -6,14 +6,14 @@ namespace PageObject.Pages
 {
     public class LoginPage : BasePage
     {
-        private static string END_POINT = "";
+        private  string END_POINT = "";
 
         // Описание элементов
-        private static readonly By UserNameInputBy = By.Id("user-name");
+        private  readonly By _userNameInputBy = By.Id("user-name");
 
-        private static readonly By PasswordInputBy = By.Id("password");
+        private  readonly By _passwordInputBy = By.Id("password");
 
-        private static readonly By LogInButtonBy = By.Id("login-button");
+        private  readonly By _logInButtonBy = By.Id("login-button");
 
         // Инициализация класса
         public LoginPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
@@ -43,8 +43,8 @@ namespace PageObject.Pages
         }
 
         // Методы
-        public IWebElement UserNameInput => Driver.FindElement(UserNameInputBy);
-        public IWebElement PasswordInput => Driver.FindElement(PasswordInputBy);
-        public IWebElement LogInButton => Driver.FindElement(LogInButtonBy);
+        public IWebElement UserNameInput => Driver.FindElement(_userNameInputBy);
+        public IWebElement PasswordInput => Driver.FindElement(_passwordInputBy);
+        public IWebElement LogInButton => Driver.FindElement(_logInButtonBy);
     }
 }

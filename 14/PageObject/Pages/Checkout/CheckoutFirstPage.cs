@@ -6,29 +6,29 @@ namespace PageObject.Pages.Checkout
 {
     public class CheckoutFirstPage : BasePage
     {
-        private static string END_POINT = "checkout-step-one.html";
+        private string END_POINT = "checkout-step-one.html";
 
         // Описание элементов
 
-        private static readonly By FirstNameInputBy = By.Id("first-name");
+        private readonly By _firstNameInputBy = By.Id("first-name");
 
-        private static readonly By LastNameInputBy = By.Id("last-name");
+        private readonly By _lastNameInputBy = By.Id("last-name");
 
-        private static readonly By PostalCodeInputBy = By.Id("postal-code");
+        private readonly By _postalCodeInputBy = By.Id("postal-code");
 
-        private static readonly By CancelButtonBy = By.Id("cancel");
+        private readonly By _cancelButtonBy = By.Id("cancel");
 
-        private static readonly By ContinueButtonBy = By.Id("continue");
+        private readonly By _continueButtonBy = By.Id("continue");
 
-        private static readonly By ShoppingCartButtonBy = By.Id("shopping_cart_container");
+        private readonly By _shoppingCartButtonBy = By.Id("shopping_cart_container");
 
-        private static readonly By MenuButtonBy = By.Id("react-burger-menu-btn");
+        private readonly By _menuButtonBy = By.Id("react-burger-menu-btn");
 
-        private static readonly By TwitterButtonBy = By.LinkText("Twitter");
+        private readonly By _twitterButtonBy = By.LinkText("Twitter");
 
-        private static readonly By FacebookButtonBy = By.LinkText("Facebook");
+        private readonly By _facebookButtonBy = By.LinkText("Facebook");
 
-        private static readonly By LinkedInButtonBy = By.LinkText("LinkedIn");
+        private readonly By _linkedInButtonBy = By.LinkText("LinkedIn");
 
         // Инициализация класса
 
@@ -60,15 +60,15 @@ namespace PageObject.Pages.Checkout
 
         // Методы
 
-        public IWebElement FirstNameInput => Driver.FindElement(FirstNameInputBy);
-        public IWebElement LastNameInput => Driver.FindElement(LastNameInputBy);
-        public IWebElement PostalCodeInput => Driver.FindElement(PostalCodeInputBy);
-        public IWebElement CancelButton => Driver.FindElement(CancelButtonBy);
-        public IWebElement ContinueButton => Driver.FindElement(ContinueButtonBy);
-        public IWebElement ShoppingCartButton => Driver.FindElement(ShoppingCartButtonBy);
-        public IWebElement MenuButton => Driver.FindElement(MenuButtonBy);
-        public IWebElement TwitterButton => Driver.FindElement(TwitterButtonBy);
-        public IWebElement FacebookButton => Driver.FindElement(FacebookButtonBy);
-        public IWebElement LinkedInButton => Driver.FindElement(LinkedInButtonBy);
+        public IWebElement FirstNameInput => Driver.FindElement(_firstNameInputBy);
+        public IWebElement LastNameInput => Driver.FindElement(_lastNameInputBy);
+        public IWebElement PostalCodeInput => Driver.FindElement(_postalCodeInputBy);
+        public IWebElement CancelButton => Driver.FindElement(_cancelButtonBy);
+        public IWebElement ContinueButton => Driver.FindElement(_continueButtonBy);
+        public IWebElement ShoppingCartButton => Driver.FindElement(_shoppingCartButtonBy);
+        public IWebElement MenuButton => Driver.FindElement(_menuButtonBy);
+        public IWebElement TwitterButton => Driver.FindElement(_twitterButtonBy);
+        public IWebElement FacebookButton => Driver.FindElement(_facebookButtonBy);
+        public IWebElement LinkedInButton => Driver.FindElement(_linkedInButtonBy);
     }
 }
