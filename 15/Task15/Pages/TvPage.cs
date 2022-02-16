@@ -9,15 +9,13 @@ namespace Task1.Pages
     {
         private string END_POINT = "tv";
 
-        private readonly By TvListBy = By.ClassName("schema-product__group");
+        private readonly By _tvListBy = By.ClassName("schema-product__group");
 
-        private readonly By ProductsComparisonButtonBy = By.ClassName("compare-button__sub_main");
+        private readonly By _productsComparisonButtonBy = By.ClassName("compare-button__sub_main");
 
-        private readonly By AppleStoreLinkBy =
-            By.CssSelector("a.schema-filter__store-item.schema-filter__store-item_apple");
+        private readonly By _appleStoreLinkBy = By.CssSelector("a.schema-filter__store-item.schema-filter__store-item_apple");
 
-        private readonly By GooglePlayLinkBy =
-            By.CssSelector("a.schema-filter__store-item.schema-filter__store-item_google");
+        private readonly By _googlePlayLinkBy = By.CssSelector("a.schema-filter__store-item.schema-filter__store-item_google");
 
 
         public TvPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
@@ -35,16 +33,16 @@ namespace Task1.Pages
 
         public override bool IsPageOpened()
         {
-            var titleElement = WaitService.GetVisibleElement(By.ClassName("schema-header__title "));
+            var titleElement = WaitService.GetVisibleElement(By.ClassName("schema-header__title"));
             var title = titleElement.GetAttribute("textContent");
 
-            return title.Equals("Телевзиоры");
+            return title.Equals("Телевизоры");
         }
 
 
-        public List<IWebElement> TvList => WaitService.GetVisibleElements(TvListBy);
-        public IWebElement ProductsComparisonButton => WaitService.GetVisibleElement(ProductsComparisonButtonBy);
-        public IWebElement AppleStoreLink => WaitService.GetVisibleElement(AppleStoreLinkBy);
-        public IWebElement GooglePlayLink => WaitService.GetVisibleElement(GooglePlayLinkBy);
+        public List<IWebElement> TvList => WaitService.GetVisibleElements(_tvListBy);
+        public IWebElement ProductsComparisonButton => WaitService.GetVisibleElement(_productsComparisonButtonBy);
+        public IWebElement AppleStoreLink => WaitService.GetVisibleElement(_appleStoreLinkBy);
+        public IWebElement GooglePlayLink => WaitService.GetVisibleElement(_googlePlayLinkBy);
     }
 }

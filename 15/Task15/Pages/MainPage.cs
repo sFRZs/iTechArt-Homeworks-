@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using System;
+using OpenQA.Selenium;
 using Task1.BaseEntities;
 
 namespace Task1.Pages
@@ -6,7 +7,7 @@ namespace Task1.Pages
     public class MainPage : BasePage
     {
         private readonly By _fastSearchBy = By.ClassName("fast-search__input");
-        private readonly By _newsAndCatalogLayerBy = By.ClassName("b-main-page-catalog-layer");
+        private readonly By _catalogButtonBy = By.LinkText("Каталог");
 
         public MainPage(IWebDriver driver, bool openPageByUrl) : base(driver, openPageByUrl)
         {
@@ -19,10 +20,19 @@ namespace Task1.Pages
 
         public override bool IsPageOpened()
         {
-            return NewsAndCatalogLayer.Displayed;
+            try
+            {
+                return CatalogButton.Displayed;
+            }
+            catch (Exception e)
+            {
+
+                return false;
+            }
+          
         }
 
         public IWebElement FastSearch => WaitService.GetVisibleElement(_fastSearchBy);
-        public IWebElement NewsAndCatalogLayer => WaitService.GetVisibleElement(_newsAndCatalogLayerBy);
+        public IWebElement CatalogButton => WaitService.GetVisibleElement(_catalogButtonBy);
     }
 }

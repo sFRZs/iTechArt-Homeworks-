@@ -8,11 +8,11 @@ namespace Task1.Pages
     {
         private string END_POINT = "cart.html";
         
-        private readonly By ScreenDiagonalBy = By.XPath("//span[contains(text(),'Диагональ экрана')]");
+        private readonly By _screenDiagonalBy = By.XPath("//span[contains(text(),'Диагональ экрана')]");
 
-        private readonly By ScreenDiagonalTipButtonBy = By.XPath("//*[@id='product-table']/tbody[5]/tr[4]/td[1]/div/span");
+        private readonly By _screenDiagonalTipButtonBy = By.XPath("//*[@id='product-table']/tbody[5]/tr[4]/td[1]/div/span");
 
-        private readonly By ComparisonItemsListBy = By.ClassName("cart_item");
+        private readonly By _comparisonItemsListBy = By.ClassName("cart_item");
 
         
        public ProductsComparisonPage(IWebDriver driver) : base(driver, false)
@@ -33,9 +33,9 @@ namespace Task1.Pages
 
 
         // Методы
-        public IWebElement ScreenDiagonal => WaitService.GetVisibleElement(ScreenDiagonalBy);
-        public IWebElement ScreenDiagonalTipButton => WaitService.GetVisibleElement(ScreenDiagonalTipButtonBy);
+        public IWebElement ScreenDiagonal => WaitService.GetVisibleElement(_screenDiagonalBy);
+        public IWebElement ScreenDiagonalTipButton => WaitService.GetVisibleElement(_screenDiagonalTipButtonBy);
 
-        public List<IWebElement> ComparisonItemsList => WaitService.GetVisibleElements(ComparisonItemsListBy);
+        public List<IWebElement> ComparisonItemsList => WaitService.GetVisibleElements(_comparisonItemsListBy);
     }
 }
